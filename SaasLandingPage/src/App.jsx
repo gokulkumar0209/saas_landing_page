@@ -1,9 +1,13 @@
-import { useState } from "react";
+import React from "react";
+// import Header from "./sections/Header";
 
 function App() {
-	const [count, setCount] = useState(0);
+	return (
+		<main className=" overflow-hidden">
 
-	return <></>;
+			{/* <Header /> */}
+		</main>
+	);
 }
 
 export default App;
