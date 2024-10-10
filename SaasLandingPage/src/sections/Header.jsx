@@ -1,24 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import { clsx } from "clsx";
 
-const NavLink = ({ title }) => (
-	<LinkScroll
-		className="base-bold text-p4 uppercase transition-colors duration-500 
-    cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
-	>
-		{title}
-	</LinkScroll>
-);
-
 function Header() {
+	const [hasScrolled, setHasScrolled] = useState(false);
+	useEffect(() => {
+		const handleScroll = () => {
+			setHasScrolled(window.scrollY > 32);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	const [isOpen, setIsOpen] = useState(false);
+	const NavLink = ({ title }) => (
+		<LinkScroll
+			className="base-bold text-p4 uppercase transition-colors duration-500 
+    cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
+			to={title}
+			spy
+			smooth
+			offset={-200}
+			activeClass="nav-active"
+			onClick={() => setIsOpen(false)}
+		>
+			{title}
+		</LinkScroll>
+	);
 	return (
-		<header className="fixed left-0 top-0 z-50 w-full py-10  ">
+		<header
+			className={clsx(
+				"fixed left-0 top-0 z-50 w-full py-10  ",
+				hasScrolled &&
+					"bg-black-100 bg-opacity-90 py-4 transition-all duration-500 backdrop-blur-[8px]"
+			)}
+		>
 			<div className=" container flex h-14 items-center max-lg:px-5">
-				<a className="lg:hidden flex-1 cursor-pointer z-2" href="">
-					<img src="images/xora.svg" width={115} height={55} alt="" />
-				</a>
+				<LinkScroll
+					className=" flex-1 transition-transform duration-500"
+					to="hero"
+					spy
+					smooth
+					offset={-200}
+				>
+					<img
+						src="images/xora.svg"
+						className=" cursor-pointer "
+						width={115}
+						height={55}
+						alt=""
+					/>
+				</LinkScroll>
+
 				<div
 					className={clsx(
 						"w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0 ",
@@ -35,12 +68,18 @@ function Header() {
 						<nav className="max-lg:relative max-lg:z-0 max-lg:my-auto">
 							<ul className=" flex max-lg:block max-lg:px-12">
 								<li className=" nav-li">
-									<NavLink title="features"></NavLink>
+									<NavLink to="features" title="features"></NavLink>
 									<div className="dot"></div>
-									<NavLink title="pricing"></NavLink>
+									<NavLink to="pricing" title="pricing"></NavLink>
 								</li>
 								<li className="nav-logo">
-									<LinkScroll>
+									<LinkScroll
+										className=" cursor-pointer"
+										to="hero"
+										offset={-200}
+										spy
+										smooth
+									>
 										<img
 											src="images/xora.svg"
 											alt="logo"
