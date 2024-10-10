@@ -12,7 +12,7 @@ function Button({
 }) {
 	const Inner = () => (
 		<>
-			<span className="relative flex items-center min-h-[60px] px-4 rounded-2xl g4 inner-before  group-hover:before:opacity-100 overflow-hidden">
+			<span className="relative z-30 flex items-center min-h-[60px] px-4 rounded-2xl g4 inner-before  group-hover:before:opacity-100 overflow-hidden">
 				<span className="absolute -left-[1px]">
 					<Marker markerFill={markerFill} />
 				</span>
@@ -20,10 +20,10 @@ function Button({
 					<img
 						src={icon}
 						alt="circle"
-						className=" size-10 mr-5 object-contain z-10"
+						className=" size-10 mr-5 object-contain z-30"
 					></img>
 				)}
-				<span className="relative z-2 font-poppins base-bold text-p1 uppercase">
+				<span className="relative z-30 font-poppins base-bold text-p1 uppercase">
 					{children}
 				</span>
 				<span className="glow-before"></span>
@@ -34,7 +34,7 @@ function Button({
 	return href ? (
 		<a
 			className={clsx(
-				"Z-50 relative p-0.5 g5 rounded-2xl shadow-500 group cursor-pointer",
+				"Z-20 relative p-0.5 g5 rounded-2xl shadow-500 group cursor-pointer",
 				containerClassName
 			)}
 			href={href}
@@ -44,7 +44,7 @@ function Button({
 	) : (
 		<button
 			className={clsx(
-				"z-50 relative p-0.5 g5 rounded-2xl shadow-500  group cursor-pointer",
+				"z-20 relative p-0.5 g5 rounded-2xl shadow-500  group cursor-pointer",
 				containerClassName
 			)}
 			onClick={onClick}
