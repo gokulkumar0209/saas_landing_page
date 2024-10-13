@@ -86,7 +86,56 @@ function Pricing() {
 										)}
 									/>
 								</div>
-								<div className={clsx()}></div>
+								<div
+									className={clsx(
+										"relative flex flex-col items-start",
+										index == 1 ? "pt-24" : "pt-12"
+									)}
+								>
+									<div
+										className={clsx(
+											"small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercased",
+											index == 1 ? "border-p3 text-p3" : "border-p1 text-p1"
+										)}
+									>
+										{plan.title}
+									</div>
+									<div
+										className={clsx(
+											" relative z-2 flex items-center justify-center w-full"
+										)}
+									>
+										<div
+											className={clsx(
+												"h-num flex items-start ",
+												index == 1 ? "text-p3" : "text-p4"
+											)}
+										>
+											{monthly
+												? "$" + plan.priceMonthly
+												: "$" + plan.priceYearly}
+											<div className=" text-xs">
+												{monthly ? " /month" : " /annum"}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div
+									className={clsx(
+										" body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center",
+										index == 1 && "border-b"
+									)}
+								>
+									{plan.caption}
+								</div>
+								<ul className=" mx-auto space-y-4 xl:px-7">
+									{plan.features.map((feature) => (
+										<li
+											key={feature}
+											className=" relative flex items-center gap-5"
+										><img src="images/check.png" alt="check" /></li>
+									))}
+								</ul>
 							</div>
 						))}
 					</div>
