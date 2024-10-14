@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import { Element } from "react-scroll";
 import { plans } from "../constants/store";
+import Button from "../components/Button.jsx";
 
 function Pricing() {
 	const [monthly, setMonthly] = useState(false);
@@ -60,7 +61,7 @@ function Pricing() {
 					{/* Pricing section */}
 					<div
 						className=" scroll-hide relative z-2 -mt-12 flex items-start 
-						max-xl:gap-5 max-xl:overflow-auto max-xl:pt-6 justify-center"
+						max-xl:gap-5 max-xl:overflow-auto max-xl:pt-6 lg:justify-center"
 					>
 						{plans.map((plan, index) => (
 							<div
@@ -94,7 +95,7 @@ function Pricing() {
 								>
 									<div
 										className={clsx(
-											"small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercased",
+											"small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercase",
 											index == 1 ? "border-p3 text-p3" : "border-p1 text-p1"
 										)}
 									>
@@ -133,9 +134,27 @@ function Pricing() {
 										<li
 											key={feature}
 											className=" relative flex items-center gap-5"
-										><img src="images/check.png" alt="check" /></li>
+										>
+											<img
+												src="images/check.png"
+												className=" size-10 object-contain"
+												alt="check"
+											/>
+											<p className=" flex-1">{feature}</p>
+										</li>
 									))}
 								</ul>
+								<div className=" mt-10 flex w-full justify-center">
+									<Button icon={plan.icon}>Get Started</Button>
+								</div>
+								{index == 1 && (
+									<p
+										className=" small-compact mt-9 text-center text-p3  before:mx-2.5 after:mx-2.5 
+									before:content-['-'] after:content-['-']"
+									>
+										Limited time offer
+									</p>
+								)}
 							</div>
 						))}
 					</div>
