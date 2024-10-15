@@ -42,6 +42,7 @@ function Header() {
 					spy
 					smooth
 					offset={-200}
+					activeClass="nav-active"
 				>
 					<img
 						src="images/xora.svg"
@@ -77,6 +78,7 @@ function Header() {
 										className=" cursor-pointer"
 										to="hero"
 										offset={-200}
+										activeClass=" nav-active"
 										spy
 										smooth
 									>
@@ -89,9 +91,9 @@ function Header() {
 									</LinkScroll>
 								</li>
 								<li className="nav-li">
-									<NavLink title="faq"></NavLink>
+									<NavLink to="faq" title="faq"></NavLink>
 									<div className="dot"></div>
-									<NavLink title="download"></NavLink>
+									<NavLink to="dowload" title="download"></NavLink>
 								</li>
 							</ul>
 						</nav>
