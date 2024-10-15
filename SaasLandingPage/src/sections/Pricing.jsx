@@ -8,7 +8,7 @@ function Pricing() {
 	const [monthly, setMonthly] = useState(false);
 	return (
 		<section>
-			<Element name="pricing " className=" mb-16">
+			<Element name="pricing" className=" mb-16">
 				<div className="container ">
 					<div
 						className="max-w-960 max-xl:max-w-4xl border-2 pricing-head_before relative mx-auto 
