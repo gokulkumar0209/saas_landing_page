@@ -116,7 +116,7 @@ function Pricing() {
 												? "$" + plan.priceMonthly
 												: "$" + plan.priceYearly}
 											<div className=" text-xs">
-												{monthly ? " /month" : " /annum"}
+												/month
 											</div>
 										</div>
 									</div>

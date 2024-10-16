@@ -16,7 +16,7 @@ function Download() {
 					<div className=" md:flex">
 						<div className=" flex-50 flex flex-col justify-center items-center mb-64">
 							<div className="flex items-center justify-center">
-								<img src="images/xora.svg" width={160} height={55} alt="xora" />
+								<img src="images/reel.svg" width={160} height={55} alt="xora" />
 							</div>
 
 							<p className=" body-1 mb-20 max-w-md text-center">
