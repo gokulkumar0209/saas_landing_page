@@ -45,7 +45,7 @@ function Header() {
 					activeClass="nav-active"
 				>
 					<img
-						src="images/xora.svg"
+						src="images/reel.svg"
 						className=" cursor-pointer "
 						width={115}
 						height={55}
@@ -83,7 +83,7 @@ function Header() {
 										smooth
 									>
 										<img
-											src="images/xora.svg"
+											src="images/reel.svg"
 											alt="logo"
 											width={160}
 											height={55}
